@@ -17,7 +17,7 @@
             font-size: 16px;
             font-weight: normal;
             user-select: none; /*사용자가 박스 내부의 텍스트를 드래그해서 선택하지 못하게 막는 설정(인터랙션 깔끔해짐)*/
-            box-sizing: border-box /*패딩과 테두리(border)를 포함한 전체 크기를
+            box-sizing: border-box; /*패딩과 테두리(border)를 포함한 전체 크기를
                                     width와 height 안에 포함시킴(패딩 때문에 박스가 더 커질 일이 없도록)*/
             display: flex; /*내부 콘텐츠 정렬(align-items와 justify-content가 이 설정으로 작동하게 됨)*/
             align-items: center; /*Flexbox 설정 중 하나. 세로 방향으로 콘텐츠(텍스트)를 가운데 정렬*/
@@ -45,9 +45,13 @@
                                     /* Math.random(): 0과 1 사이의 랜덤 숫자 생성
                                        Math.floor(): 숫자의 소수점을 버리고 정수로 바꿈
                                        ``: 탬플릿 리터럴. 위 코드블럭의 각 줄에서 도출한 R값, G값, B값을 하나의 문자열로 합쳐줌 */
-
         meBox.style.backgroundColor = randomColor;
         });
+
+        meBox.addEventListener("mouseleave", () => {
+            meBox.textContent = "마우스를 움직이세요.";
+        });
+
 
     </script>
 
